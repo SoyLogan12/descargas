@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SoyLogaN - Centro de Descargas</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#03045e',
+              blue: '#0077b6',
+              cyan: '#00b4d8',
+              aqua: '#90e0ef',
+              ice: '#caf0f8',
+            }
+          },
+          animation: {
+            'float': 'float 4s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2.5s infinite',
+            'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'shine': 'shine 3s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 15px rgba(0, 180, 216, 0.3)' },
+              '50%': { boxShadow: '0 0 30px rgba(0, 180, 216, 0.7)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            shine: {
+              '0%': { backgroundPosition: '200% 0' },
+              '100%': { backgroundPosition: '-200% 0' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #03045e;
+      overflow-x: hidden;
+    }
+    
+    .bg-grid-pattern {
+      background-size: 30px 30px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 119, 182, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 119, 182, 0.05) 1px, transparent 1px);
+    }
+
+    .shine-text {
+      background: linear-gradient(90deg, #03045e 0%, #00b4d8 50%, #03045e 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shine 4s linear infinite;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(144, 224, 239, 0.5);
+    }
+  </style>
+</head>
+
+<body class="bg-grid-pattern min-h-screen flex flex-col justify-between font-sans relative antialiased selection:bg-brand-aqua selection:text-brand-dark">
+
+  <!-- Luces ambientales de fondo -->
+  <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[400px] max-h-[400px] bg-brand-ice rounded-full blur-[90px] pointer-events-none -z-10 opacity-70"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] max-w-[400px] max-h-[400px] bg-brand-aqua/30 rounded-full blur-[90px] pointer-events-none -z-10"></div>
+
+  <!-- Encabezado / Navbar -->
+  <header class="w-full py-4 px-4 sm:px-8 glass-card sticky top-0 z-50 shadow-sm border-b border-brand-ice">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-dark to-brand-cyan flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform duration-300">
+          S
+        </div>
+        <span class="font-extrabold text-xl tracking-tight text-brand-dark group-hover:text-brand-blue transition-colors">
+          SOY<span class="text-brand-cyan">LOGAN</span>
+        </span>
+      </a>
+      <a href="https://soylogan.vercel.app/" target="_blank" class="text-xs sm:text-sm font-semibold text-brand-dark bg-brand-ice hover:bg-brand-aqua/50 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-brand-aqua transition-all flex items-center gap-1.5">
+        <i class="fa-solid fa-[#00b4d8] fa-crown text-yellow-500"></i>
+        <span>Paneles VIP</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="w-full max-w-xl mx-auto px-4 py-8 sm:py-12 flex-grow flex flex-col justify-center">
+    
+    <!-- Hero / Título -->
+    <div class="text-center mb-8 sm:mb-10 animate-fade-in-up">
+      <div class="inline-flex items-center gap-2 bg-brand-ice/80 border border-brand-aqua/60 px-3 py-1 rounded-full text-xs font-bold text-brand-dark mb-4 animate-float">
+        <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+        Descarga Gratuita Verificada
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 shine-text leading-tight">
+        Panel Auto Apuntado 🎄
+      </h1>
+      <p class="text-sm sm:text-base text-brand-blue/80 font-medium max-w-md mx-auto">
+        Obtén la versión gratuita oficial para tu juego. Configuración rápida y segura.
+      </p>
+    </div>
+
+    <!-- Ficha de Descarga Gratuita -->
+    <div class="glass-card rounded-2xl p-5 sm:p-7 shadow-xl border border-brand-aqua/40 mb-6 animate-fade-in-up transition-all hover:shadow-2xl hover:border-brand-cyan/60" style="animation-delay: 0.15s;">
+      <div class="flex items-center justify-between border-b border-brand-ice pb-4 mb-5">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-brand-ice flex items-center justify-center text-brand-cyan text-2xl shadow-inner">
+            <i class="fa-solid fa-file-zipper"></i>
+          </div>
+          <div>
+            <h2 class="font-bold text-brand-dark text-base sm:text-lg leading-snug">AUTO APUNTADO🎄.zip</h2>
+            <p class="text-xs text-brand-blue/70">Archivo comprimido • MediaFire</p>
+          </div>
+        </div>
+        <span class="bg-green-100 text-green-700 text-xs font-bold px-2.5 py-1 rounded-md border border-green-200">
+          Activo
+        </span>
+      </div>
+
+      <!-- Detalles del archivo -->
+      <div class="grid grid-cols-2 gap-3 mb-6 text-xs sm:text-sm">
+        <div class="bg-white/60 p-2.5 rounded-lg border border-brand-ice flex items-center gap-2">
+          <i class="fa-solid fa-[#0077b6] fa-shield-halved text-brand-cyan"></i>
+          <span class="text-brand-dark/80">Sin Virus / Seguro</span>
+        </div>
+        <div class="bg-white/60 p-2.5 rounded-lg border border-brand-ice flex items-center gap-2">
+          <i class="fa-solid fa-bolt text-brand-cyan"></i>
+          <span class="text-brand-dark/80">Descarga Directa</span>
+        </div>
+      </div>
+
+      <!-- Botón de Descarga Gratuita -->
+      <a href="https://www.mediafire.com/file/c8v2lyvm6w5i1to/AUTO+APUNTADO🎄.zip/file" target="_blank" rel="noopener font-bold" class="w-full bg-gradient-to-r from-brand-blue to-brand-cyan hover:from-brand-dark hover:to-brand-blue text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-brand-cyan/40 transition-all duration-300 flex items-center justify-center gap-3 group text-base sm:text-lg">
+        <i class="fa-solid fa-download group-hover:translate-y-0.5 transition-transform"></i>
+        <span>Descargar Gratis</span>
+        <i class="fa-solid fa-arrow-right text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+    </div>
+
+    <!-- Banner VIP de Paga -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-blue to-brand-dark rounded-2xl p-6 text-white shadow-xl animate-fade-in-up animate-pulse-glow" style="animation-delay: 0.3s;">
+      
+      <!-- Adorno de fondo -->
+      <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-brand-cyan/20 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div>
+          <div class="inline-flex items-center gap-1.5 bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-crown text-yellow-400"></i> Recomentado
+          </div>
+          <h3 class="font-extrabold text-lg sm:text-xl text-white">¿Quieres máxima potencia?</h3>
+          <p class="text-xs sm:text-sm text-brand-ice/90 mt-1">
+            Obtén los paneles VIP de paga con soporte prioritario.
+          </p>
+        </div>
+
+        <a href="https://soylogan.vercel.app/" target="_blank" class="w-full sm:w-auto whitespace-nowrap bg-white hover:bg-brand-ice text-brand-dark font-extrabold py-3 px-5 rounded-xl shadow-md hover:scale-105 transition-all text-sm flex items-center justify-center gap-2">
+          <span>Ver Paneles VIP</span>
+          <i class="fa-solid fa-external-link text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="w-full py-6 text-center text-xs text-brand-blue/70 border-t border-brand-ice/60 glass-card">
+    <p>© 2026 <span class="font-bold text-brand-dark">SoyLogaN</span>. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
